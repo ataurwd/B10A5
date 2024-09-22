@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                primari: '#B4F461',
+              },
+              fontFamily: {
+            lexend: ['"Lexend"', 'sans-serif'],
+            },
+            }
+          }
+        }
+      </script>
+</head>
+<body class="font-lexend">
+    <nav class="flex justify-between py-6 lg:px-40 px-4">
+        <button class="bg-primari lg:px-7 lg:py-2 px-4 rounded-xl text-white">Blog</button>
+        <div class="flex">
+            <img class="w-[30px]" src="./assets/logo.png " alt="">
+            <h1 class="lg:text-2xl font-bold mt-3 ml-4">Donate Bangladesh</h1>
+        </div>
+        <div class="flex">
+            <img src="./assets/coin.png" alt="">
+            <h1 class="lg:text-xl mt-2 ml-3"> <span id="blance">5500</span>BDT</h1>
+        </div>
+    </nav>
+
+    <!-- main -->
+
+    
+</body>
+</html>
