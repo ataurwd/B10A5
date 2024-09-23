@@ -27,9 +27,12 @@ function convertValue(id){
 
 //calculate funtion
 function calculatePrice(balance, donationAmount, donationText, postTitle){
-
     const AccountBalance = parseFloat(document.getElementById(balance).innerText);
     const donationPrice = convertValue(donationAmount);
+    
+    if(donationPrice <= 0 || AccountBalance < donationPrice || isNaN(donationPrice)){
+        return alert('Invalid Donation');
+    }
     const totalDonation = AccountBalance - donationPrice;
     document.getElementById(balance).innerText = totalDonation.toFixed(2)
 
@@ -38,15 +41,7 @@ function calculatePrice(balance, donationAmount, donationText, postTitle){
 
     const newDonation = donationPrice + donationValue;
     donationValueEl.innerText = newDonation.toFixed(2);
-    document.getElementById(donationAmount).value = ''
-
-
-    const model = document.getElementById('my_modal_1')     
-    if(donationPrice <= 0 || AccountBalance < donationPrice || isNaN(donationPrice)){
-        // model.setAttribute('disabled')
-        return alert('Invalid Donation')
-
-    }
+    document.getElementById(donationAmount).value = '';
     //history
     const donationTitel = document.getElementById(postTitle).innerText;
     const historyDiv = document.getElementById('history-menu')
@@ -54,11 +49,20 @@ function calculatePrice(balance, donationAmount, donationText, postTitle){
     history.innerHTML += `
         <div class="border-2 p-5 rounded-xl mt-4 space-y-4">
             <h1>${donationPrice.toFixed(2)} ${donationTitel}</h1>
-            <p>Date: ${new Date()}</p>
+            <p>${new Date()}</p>
         </div>
     `
     historyDiv.appendChild(history)
+
+    //show modal
+    document.getElementById('my_modal_1').showModal();
 }
+
+// Close the modal
+document.getElementById('close-modal').addEventListener('click', function() {
+    document.getElementById('my_modal_1').close();
+});
+
 
 
 // first card

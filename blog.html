@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float Donation Website</title>
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+            tailwind.config = {
+              theme: {
+                extend: {
+                  colors: {
+                    primari: '#B4F461',
+                  },
+                  fontFamily: {
+                lexend: ['"Lexend"', 'sans-serif'],
+                },
+                }
+              }
+            }
+    </script>   
+</head>
+<body class="font-lexend">
+    <header class="sticky z-10 top-0 bg-gray-100 lg:pb-5 bg-transparent backdrop-filter backdrop-blur-lg">
+        <nav class="flex justify-between items-center py-6 lg:px-40 px-4 bg-[#F9F7F3]">
+            <a class="bg-primari lg:px-7 lg:py-2 px-4 py-1 rounded-xl text-white" href="index.html">Home</a>
+            <div class="flex items-center justify-between ml-4">
+                <img class="w-8 lg:w-[30px]" src="./assets/logo.png" alt="">
+                <h1 class="lg:text-2xl font-bold lg:ml-4 lg:block hidden">Donate Bangladesh</h1>
+            </div>
+            <div class="flex items-center">
+                <img class="w-8 lg:w-[30px]" src="./assets/coin.png" alt="">
+                <h1 class="lg:text-xl lg:ml-3">
+                    <span id="balance">5500</span> BDT
+                </h1>
+            </div>
+        </nav>
+    </header>
+
+    <main class="lg:mx-40">
+        <div class="collapse collapse-plus ">
+            <input type="radio" name="my-accordion-3" checked="checked" />
+            <div class="collapse-title text-xl font-medium">What is the DOM in JavaScript?</div>
+            <div class="collapse-content">
+              <p>The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of an HTML or XML document as a tree of objects, allowing JavaScript to manipulate the content, structure, and styling of the web page dynamically.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-plus ">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title text-xl font-medium">What is event delegation in the DOM and why is it useful?</div>
+            <div class="collapse-content">
+              <p>Event delegation is a technique where a single event listener is added to a parent element to handle events for multiple child elements. Instead of attaching an event listener to each individual child, you attach one to the parent, and the event bubbles up from the children to the parent.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-plus ">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title text-xl font-medium">What is the difference between innerHTML and textContent?</div>
+            <div class="collapse-content">
+              <p>innerHTML returns or sets the HTML content of an element, including tags and formatting, whereas textContent returns or sets only the plain text without any HTML tags. innerHTML allows you to manipulate HTML structure, but it can be slower and poses security risks if you're handling untrusted data (due to potential cross-site scripting). textContent is safer when dealing with plain text.</p>
+            </div>
+          </div>
+          <div class="collapse collapse-plus ">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title text-xl font-medium">How does DOM manipulation affect performance?</div>
+            <div class="collapse-content">
+              <p>Frequent DOM manipulation can negatively impact performance because the browser must re-render the page each time the DOM is updated. This is known as "reflow" or "repaint." To optimize performance, it's better to minimize direct changes to the DOM by batching updates or using techniques like documentFragment to make multiple changes at once before adding them to the DOM.</p>
+            </div>
+          </div>
+    </main>
+    <footer class=""></footer>
+</body>
+</html>
