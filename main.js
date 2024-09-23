@@ -1,4 +1,4 @@
-// togle btn
+// Toggle Btn
 const donationBtn = document.getElementById('donation');
 const historyBtn = document.getElementById('history');
 const historyMenu = document.getElementById('history-menu');
@@ -9,14 +9,14 @@ historyBtn.addEventListener('click', function() {
     historyMenu.classList.remove('hidden');
     historyBtn.classList.add('bg-primari');
     donationBtn.classList.remove('bg-primari');
-    donationBtn.classList.add('border-2')
+    donationBtn.classList.add('border-2','hover:bg-gray-200')
 })
 
 donationBtn.addEventListener('click', function(){
     historyMenu.classList.add('hidden');
     donationSection.classList.remove('hidden')
     historyBtn.classList.remove('bg-primari');
-    donationBtn.classList.add('bg-primari');
+    donationBtn.classList.add('bg-primari',);
     donationBtn.classList.remove('border-2')
 })
 
@@ -42,6 +42,7 @@ function calculatePrice(balance, donationAmount, donationText, postTitle){
     const newDonation = donationPrice + donationValue;
     donationValueEl.innerText = newDonation.toFixed(2);
     document.getElementById(donationAmount).value = '';
+    
     //history
     const donationTitel = document.getElementById(postTitle).innerText;
     const historyDiv = document.getElementById('history-menu')
@@ -52,7 +53,7 @@ function calculatePrice(balance, donationAmount, donationText, postTitle){
             <p>${new Date()}</p>
         </div>
     `
-    historyDiv.appendChild(history)
+    historyDiv.insertBefore(history, historyDiv.firstChild)
 
     //show modal
     document.getElementById('my_modal_1').showModal();
