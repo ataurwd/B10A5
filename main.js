@@ -8,8 +8,9 @@ historyBtn.addEventListener('click', function() {
     donationSection.classList.add('hidden');
     historyMenu.classList.remove('hidden');
     historyBtn.classList.add('bg-primari');
-    donationBtn.classList.remove('bg-primari');
-    donationBtn.classList.add('border-2','hover:bg-gray-200')
+    donationBtn.classList.remove('bg-primari','hover:bg-gray-200');
+    donationBtn.classList.add('border-2','hover:bg-gray-200');
+    historyBtn.classList.remove('hover:bg-gray-200')
 })
 
 donationBtn.addEventListener('click', function(){
@@ -55,7 +56,7 @@ function calculatePrice(balance, donationAmount, donationText, postTitle){
     history.innerHTML += `
         <div class="border-2 p-5 rounded-xl mt-4 space-y-4">
             <h1>${donationPrice.toFixed(2)} ${donationTitel}</h1>
-            <p>${new Date()}</p>
+            <p>${new Date().toString()}</p>
         </div>
     `
     historyDiv.insertBefore(history, historyDiv.firstChild)
