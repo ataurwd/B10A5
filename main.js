@@ -28,10 +28,15 @@ function convertValue(id){
 //calculate funtion
 function calculatePrice(balance, donationAmount, donationText, postTitle){
     const AccountBalance = parseFloat(document.getElementById(balance).innerText);
+    const donationPriceValid = document.getElementById(donationAmount).value.trim();
     const donationPrice = convertValue(donationAmount);
     
-    if(donationPrice <= 0 || AccountBalance < donationPrice || isNaN(donationPrice)){
+    const validNumber = /^\d+(\.\d+)?$/.test(donationPriceValid);
+    if(!validNumber || donationPrice <= 0 || isNaN(donationPrice)){
         return alert('Invalid Donation');
+    }
+    if(AccountBalance < donationPrice){
+        return alert('insufficient balance')
     }
     const totalDonation = AccountBalance - donationPrice;
     document.getElementById(balance).innerText = totalDonation.toFixed(2)
